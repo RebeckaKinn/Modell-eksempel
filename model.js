@@ -33,18 +33,88 @@ const model = {
 
     app:{
 
+        //VISER OG VELGER HVILKEN VIEW SOM SKAL VISES
+        site: [
+                'frontPage',
+                'allRecipies',
+                'seachrecipient',
+                'addRecipie',
+                'showRecipie'
+            ],
+        
+        //POP-UP INDIKATORER
+        settingsMenu: false,
+        difficultyMenu: false,
+        idgredientMenu: false,
+        categoryMenu: false,
     },
-    
+
 
     input: {
+
+        //VALUES FRA INPUTFEILT LEGGES TIL HER
+        addFoodItem: {
+            id: null,
+            title: '',
+            difficulty: null,
+            durationInMinutes: 0,
+            recipie: [
+                {idgredient: '', amount: ''},
+            ],
+            category: [],
+            approach: '',
+            src: 'demoImg.png'
+        },
 
     },
 
 
     data: {
 
+        //INNEHOLDER ALLE KATEGORIENE SOM SKAL BLI VIST
+        category: [
+                'Middag', 
+                'Frokost',
+                'Bake', 
+                'Gjester',
+                'Barn'
+        ],
+
+        //LAGRINGSPLASS FOR OPPSKRIFTER, FUNGERER SOM EN DATABASE
+        recipieList: [
+            {
+                id: 1,
+                title: 'Kjøttkaker',
+                difficulty: 3,
+                durationInMinutes: 30,
+                recipie: [
+                    {idgredient: 'Kjøttdeig', amount: '1 500g pk'},
+                    {idgredient: 'Salt', amount: '1 ts'},
+                    {idgredient: 'Løk', amount: '1/2, hakket'},
+                    {idgredient: 'Mel', amount: '2 ss'},
+                    {idgredient: 'Egg', amount: '1 stor'},
+                ],
+                category: ['Kjøtt', 'Middag'],
+                approach: 'Moser alt sammen i en stor bolle, slå på plata og bruk en spiseskje til å lage boller. Stek noen minutter per side.',
+                src: 'kjøttkaker.png'
+            },
+            {
+                id: 2,
+                title: 'Pannekaker',
+                durationInMinutes: 40,
+                difficulty: 2,
+                recipie: [
+                    {idgredient: 'Mel', amount: '5 dl'},
+                    {idgredient: 'Salt', amount: '1 ts'},
+                    {idgredient: 'Egg', amount: '2'},
+                    {idgredient: 'Melk', amount: '3 dl'},
+                ],
+                category: ['Bake', 'Middag', 'Frokost'],
+                approach: 'Rør alt sammen og stek i panna. Flip når den begynner å se fast ut. ',
+                src: 'pannekaker.png'
+            },
+        ],
+
     }
-
-
 
 };
